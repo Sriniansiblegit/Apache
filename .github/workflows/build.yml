@@ -16,6 +16,6 @@ jobs:
         with:
           registry: ghcr.io
           username: $ {{ Sriniansiblegit }}
-          password: $ {{sccrets.GITHUB_TOKEN }}
+          password: $ {{ sccrets.GITHUB_TOKEN }}
       - name: Build Docker Image
         run: docker build -t ghcr.io/Sriniansiblegit/Apache:latest .

@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      image_uri: ${{ steps.tag_image.outputs.image_uri }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -19,4 +21,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Build Docker Image
-        run: docker build -t ghcr.io/sriniansiblegit/apache:latest .
+        id: tag_image
+        run: |
+          docker build -t ghcr.io/sriniansiblegit/apache:latest .
+          echo "::set-output name=image_uri::ghcr.io/sriniansiblegit/apache:latest"

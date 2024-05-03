@@ -2,7 +2,7 @@ version: 1
 taskDefinition:
   containerDefinitions:
     - name: container-service
-      image: sriniansiblegit/apache
+      image: ghcr.io/sriniansiblegit/apache:latest
       cpu: 256
       memory: 512
       portMappings:

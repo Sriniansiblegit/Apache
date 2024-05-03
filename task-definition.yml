@@ -9,3 +9,4 @@ taskDefinition:
         - containerPort: 80
           hostPort: 80
       essential: true
+  executionRoleArn: arn:aws:iam::211125514421:role/ecsTaskExecutionRole
